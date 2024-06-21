@@ -4,9 +4,9 @@ jobs:
   my-firstjob:
     runs-on: ubuntu-latest
       steps:
-            - name: Print-Greeting
-              run: echo "Hello Dharmendra, Welcome to your first workflow job"
-            - name: Completed-Bye
-              run: echo "You have completed your first job"
+        - name: Print-Greeting
+          run: echo "Hello Dharmendra, Welcome to your first workflow job"
+        - name: Completed-Bye
+          run: echo "You have completed your first job"
     
   
