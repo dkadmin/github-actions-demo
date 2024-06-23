@@ -10,6 +10,8 @@ jobs:
         run: npm ci --force
       - name: audit
         run: npm audit fix
+      - name: css
+        run: npx stylelint "**/*.css"
       - name: Lint
         run: npx run lint
   test:
