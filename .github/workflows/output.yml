@@ -1,18 +1,8 @@
-name: Issue Event Example
-
-on:
-  issues:
-    types: [opened, edited, deleted]
-
+name: Handle issues
+on: issues
 jobs:
-  print-issue-details:
+  output-info:
     runs-on: ubuntu-latest
     steps:
-      - name: Print Issue Details
-        id: print_details
-        run: |
-          echo "Issue Number: ${{ github.event.issue.number }}"
-          echo "Issue Title: ${{ github.event.issue.title }}"
-          echo "Issue Body: ${{ github.event.issue.body }}"
-          echo "Opened By: ${{ github.event.issue.user.login }}"
-          echo "Labels: ${{ join(github.event.issue.labels.*.name, ', ') }}"
+      - name: Output event details
+        run: echo "${{ toJSON(github.event) }}"
